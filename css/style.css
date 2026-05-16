@@ -63,7 +63,7 @@ body {
   grid-template-columns: 1fr 1.45fr;
   gap: 35px;
   padding: 50px 8%;
-  align-items: start;
+  align-items: stretch;
 }
 
 .chart-explanation {
@@ -71,18 +71,22 @@ body {
   padding: 35px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .chart-explanation h2 {
   color: #12355B;
-  font-size: 28px;
+  font-size: 34px;
   line-height: 1.2;
   margin-top: 0;
+  margin-bottom: 25px;
 }
 
 .chart-explanation p {
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 21px;
+  line-height: 1.75;
+  margin-bottom: 28px;
 }
 
 .chart-panel {
@@ -90,6 +94,8 @@ body {
   padding: 35px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .chart-panel h2 {
@@ -105,7 +111,7 @@ body {
 }
 
 .chart-note {
-  font-size: 13px;
+  font-size: 16px;
   color: #555555;
   margin-top: 25px;
 }

@@ -28,7 +28,7 @@
     "y": {
       "field": "percentage",
       "type": "quantitative",
-      "title": "Per cent",
+      "title": "Percent",
       "scale": {
         "domain": [0, 50]
       },
@@ -54,12 +54,12 @@
           "Never a full glass of alcohol"
         ],
         "range": [
-          "#2b7b9b",
-          "#1bb6c9",
-          "#7b68c4",
-          "#6dae45",
-          "#1f7a4c",
-          "#f26c21"
+          "#D1495B",
+          "#00798C",
+          "#EDAE49",
+          "#30638E",
+          "#6A4C93",
+          "#588157"
         ]
       },
       "legend": {
@@ -85,7 +85,7 @@
       {
         "field": "percentage",
         "type": "quantitative",
-        "title": "Per cent"
+        "title": "Percent"
       }
     ]
   },
