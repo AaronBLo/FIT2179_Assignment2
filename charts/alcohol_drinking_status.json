@@ -1,0 +1,106 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 620,
+  "height": 330,
+  "data": {
+    "url": "data/alcohol_drinking_status.csv"
+  },
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 70
+    },
+    "strokeWidth": 2.5
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 12,
+        "tickSize": 0,
+        "domainColor": "#555555"
+      }
+    },
+    "y": {
+      "field": "percentage",
+      "type": "quantitative",
+      "title": "Per cent",
+      "scale": {
+        "domain": [0, 50]
+      },
+      "axis": {
+        "labelFontSize": 12,
+        "titleFontSize": 14,
+        "grid": true,
+        "gridColor": "#e5e5e5",
+        "domainColor": "#555555"
+      }
+    },
+    "color": {
+      "field": "status",
+      "type": "nominal",
+      "title": "Drinking status",
+      "scale": {
+        "domain": [
+          "Daily",
+          "Weekly",
+          "Monthly",
+          "Less often than monthly",
+          "Ex-drinker",
+          "Never a full glass of alcohol"
+        ],
+        "range": [
+          "#2b7b9b",
+          "#1bb6c9",
+          "#7b68c4",
+          "#6dae45",
+          "#1f7a4c",
+          "#f26c21"
+        ]
+      },
+      "legend": {
+        "orient": "bottom",
+        "columns": 2,
+        "labelFontSize": 12,
+        "titleFontSize": 14,
+        "symbolType": "stroke",
+        "symbolSize": 120
+      }
+    },
+    "tooltip": [
+      {
+        "field": "year",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      {
+        "field": "status",
+        "type": "nominal",
+        "title": "Drinking status"
+      },
+      {
+        "field": "percentage",
+        "type": "quantitative",
+        "title": "Per cent"
+      }
+    ]
+  },
+  "config": {
+    "background": "#ffffff",
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  }
+}

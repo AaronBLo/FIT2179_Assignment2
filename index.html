@@ -2,13 +2,68 @@
 <html>
 <head>
   <title>FIT2179 Assignment 2</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <h1>Alcohol Consumption in Australia</h1>
 
-  <p>
-    This webpage will explore how alcohol drinking habits in Australia have changed over time.
-  </p>
+  <!-- Hero section -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="unit-label">FIT2179 Data Visualisation 2</p>
+
+      <h1>Alcohol Consumption<br>in Australia</h1>
+
+      <p class="subtitle">
+        Exploring how alcohol drinking habits among Australians aged 14 and over have changed from 2001 to 2022.
+      </p>
+    </div>
+
+    <div class="hero-card">
+      <h2>2001–2022</h2>
+      <p>
+        This visualisation uses alcohol drinking status data to show how Australians' drinking habits have changed over time.
+      </p>
+    </div>
+  </section>
+
+  <!-- Chart and explanation section -->
+  <section class="chart-story-section">
+
+    <div class="chart-explanation">
+      <h2>How have Australian drinking habits changed?</h2>
+
+      <p>
+        This line graph compares different drinking status groups among Australians aged 14 and over from 2001 to 2022.
+      </p>
+
+      <p>
+        Each line represents a different drinking status category, such as daily drinking, weekly drinking, monthly drinking, ex-drinkers, and people who have never had a full glass of alcohol.
+      </p>
+
+      <p>
+        The chart helps show whether Australians are drinking more frequently, less frequently, or shifting into different drinking behaviour groups over time.
+      </p>
+
+      <p class="chart-note">
+        Source: Australian Institute of Health and Welfare. Data values are shown as percentages.
+      </p>
+    </div>
+
+    <div class="chart-panel">
+      <h2>Alcohol drinking status, 2001 to 2022</h2>
+      <div id="alcohol_status_line_chart"></div>
+    </div>
+
+  </section>
+
+  <!-- Vega-Lite libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <!-- JavaScript file that embeds the charts -->
+  <script src="js/vega_lite_vis.js"></script>
+
 </body>
 </html>
