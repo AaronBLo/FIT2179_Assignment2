@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 560,
+  "height": 140,
+  "background": "white",
+  "data": {
+    "url": "data/beverage_type_2022.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "height": 55,
+    "stroke": "white",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "percentage",
+      "type": "quantitative",
+      "stack": "normalize",
+      "axis": {
+        "title": "Share of recent drinkers",
+        "format": ".0%",
+        "labelFont": "Arial",
+        "titleFont": "Arial",
+        "labelFontSize": 12,
+        "titleFontSize": 12
+      }
+    },
+    "y": {
+      "datum": "2022",
+      "type": "nominal",
+      "axis": null
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "title": "Beverage type",
+      "scale": {
+        "domain": [
+          "Wine",
+          "Beer",
+          "Spirits/liqueurs",
+          "Pre-mixed drinks",
+          "Cider",
+          "Other"
+        ],
+        "range": [
+          "#7B2CBF",
+          "#00798C",
+          "#D1495B",
+          "#EDA93B",
+          "#588157",
+          "#6C757D"
+        ]
+      },
+      "legend": {
+        "orient": "bottom",
+        "columns": 3,
+        "titleFont": "Arial",
+        "labelFont": "Arial",
+        "titleFontSize": 12,
+        "labelFontSize": 12
+      }
+    },
+    "order": {
+      "field": "rank",
+      "type": "quantitative",
+      "sort": "ascending"
+    },
+    "tooltip": [
+      {
+        "field": "category",
+        "type": "nominal",
+        "title": "Beverage"
+      },
+      {
+        "field": "percentage",
+        "type": "quantitative",
+        "title": "Percentage",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
