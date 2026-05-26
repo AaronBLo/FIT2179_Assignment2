@@ -6,6 +6,18 @@
   "data": {
     "url": "data/beverage_type_2022.csv"
   },
+  "params": [
+    {
+      "name": "beverage_select",
+      "select": {
+        "type": "point",
+        "fields": ["category"],
+        "on": "click",
+        "clear": "dblclick"
+      },
+      "bind": "legend"
+    }
+  ],
   "mark": {
     "type": "bar",
     "height": 55,
@@ -59,8 +71,17 @@
         "titleFont": "Arial",
         "labelFont": "Arial",
         "titleFontSize": 12,
-        "labelFontSize": 12
+        "labelFontSize": 12,
+        "symbolType": "square",
+        "symbolSize": 120
       }
+    },
+    "opacity": {
+      "condition": {
+        "param": "beverage_select",
+        "value": 1
+      },
+      "value": 0.18
     },
     "order": {
       "field": "rank",

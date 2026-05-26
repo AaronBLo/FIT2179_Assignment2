@@ -58,6 +58,31 @@ body {
   margin: 0;
 }
 
+.interaction-note {
+  font-size: 12px;
+  color: #8a8a8a;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.source-text {
+  font-size: 12px;
+  color: #8a8a8a;
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.source-text a {
+  color: #8a8a8a;
+  text-decoration: underline;
+}
+
+.source-text a:hover {
+  color: #12355B;
+}
+
 .chart-story-section {
   display: grid;
   grid-template-columns: 1fr 1.45fr;
@@ -99,6 +124,23 @@ body {
   margin-bottom: 28px;
 }
 
+.chart-explanation .source-text {
+  font-size: 12px;
+  color: #8a8a8a;
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.chart-explanation .source-text a {
+  font-size: 12px;
+  color: #666666;
+  text-decoration: underline;
+}
+
+.chart-explanation .source-text a:hover {
+  color: #12355B;
+}
 .chart-panel h2,
 .beverage-breakdown-card h2,
 .per-capita-card h2 {

@@ -5,6 +5,18 @@
   "data": {
     "url": "data/alcohol_drinking_status.csv"
   },
+  "params": [
+    {
+      "name": "status_select",
+      "select": {
+        "type": "point",
+        "fields": ["status"],
+        "on": "click",
+        "clear": "dblclick"
+      },
+       "bind": "legend"
+    }
+  ],
   "mark": {
     "type": "line",
     "point": {
@@ -64,12 +76,19 @@
       },
       "legend": {
         "orient": "bottom",
-        "columns": 2,
+        "columns": 3,
         "labelFontSize": 12,
         "titleFontSize": 14,
-        "symbolType": "stroke",
-        "symbolSize": 120
+        "symbolType": "square",
+        "symbolSize": 160
       }
+    },
+    "opacity": {
+      "condition": {
+        "param": "status_select",
+        "value": 1
+      },
+      "value": 0.18
     },
     "tooltip": [
       {
@@ -85,7 +104,8 @@
       {
         "field": "percentage",
         "type": "quantitative",
-        "title": "Percent"
+        "title": "Percent",
+        "format": ".1f"
       }
     ]
   },
