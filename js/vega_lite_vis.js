@@ -20,3 +20,17 @@ vegaEmbed("#per_capita_line_chart", per_capita_line_chart, {
   actions: false
 }).then(function(result) {
 }).catch(console.error);
+
+var risky_drinking_heatmap = "charts/risky_drinking_age_gender_heatmap.json";
+
+vegaEmbed("#risky_drinking_heatmap", risky_drinking_heatmap, {
+  actions: false
+}).then(function(result) {
+}).catch(console.error);
+
+var risky_drinking_state_map = "charts/risky_drinking_state_map.json";
+
+vegaEmbed("#risky_drinking_state_map", risky_drinking_state_map, {
+  actions: false
+}).then(function(result) {
+}).catch(console.error);

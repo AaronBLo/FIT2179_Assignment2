@@ -1,0 +1,17 @@
+year,age_group,age_order,gender,risky_percentage,use_with_caution,significant_change_2019_2022
+2022,14-17,1,Male,3.2,yes,yes
+2022,18-24,2,Male,44.9,no,no
+2022,25-29,3,Male,42.8,no,no
+2022,30-39,4,Male,43.1,no,no
+2022,40-49,5,Male,42.1,no,no
+2022,50-59,6,Male,36.9,no,yes
+2022,60-69,7,Male,43.6,no,no
+2022,70+,8,Male,35.8,no,no
+2022,14-17,1,Female,8.3,yes,no
+2022,18-24,2,Female,40.0,no,no
+2022,25-29,3,Female,25.9,no,no
+2022,30-39,4,Female,22.2,no,no
+2022,40-49,5,Female,24.3,no,no
+2022,50-59,6,Female,27.7,no,no
+2022,60-69,7,Female,22.7,no,no
+2022,70+,8,Female,15.4,no,no

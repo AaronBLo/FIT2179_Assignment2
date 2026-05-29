@@ -188,3 +188,66 @@ body {
 .per-capita-card {
   min-height: 390px;
 }
+
+.section-heading {
+  margin: 40px 8% 20px 8%;
+  padding: 35px;
+  background-color: #12355B;
+  color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.section-heading h2 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin: 0 0 15px 0;
+}
+
+.section-heading p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.heatmap-section {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 35px;
+  padding: 25px 8% 50px 8%;
+  align-items: stretch;
+}
+
+.heatmap-card,
+.annotation-card {
+  background-color: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.heatmap-card h2,
+.annotation-card h2 {
+  color: #12355B;
+  font-size: 24px;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.annotation-card p {
+  font-size: 19px;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+#risky_drinking_heatmap {
+  display: flex;
+  justify-content: center;
+}
+
+#risky_drinking_state_map {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 430,
+  "background": "white",
+  "projection": {
+    "type": "mercator"
+  },
+  "data": {
+    "url": "data/australia_states.json",
+    "format": {
+      "type": "topojson",
+      "feature": "australia_states"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.STE_NAME16",
+      "from": {
+        "data": {
+          "url": "data/risky_drinking_by_state_2022_2023.csv"
+        },
+        "key": "state",
+        "fields": ["risky_percentage"]
+      }
+    },
+    {
+      "calculate": "datum.properties.STE_NAME16",
+      "as": "state_name"
+    }
+  ],
+  "params": [
+    {
+      "name": "state_select",
+      "select": {
+        "type": "point",
+        "fields": ["state_name"],
+        "on": "click",
+        "clear": "dblclick"
+      }
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 1.2
+  },
+  "encoding": {
+    "color": {
+      "field": "risky_percentage",
+      "type": "quantitative",
+      "title": "Risky drinking (%)",
+      "scale": {
+        "domain": [25, 40],
+        "range": ["#FFF3E0", "#B23A48"]
+      },
+      "legend": {
+        "titleFont": "Arial",
+        "labelFont": "Arial",
+        "titleFontSize": 12,
+        "labelFontSize": 12
+      }
+    },
+    "opacity": {
+      "condition": {
+        "param": "state_select",
+        "value": 1
+      },
+      "value": 0.2
+    },
+    "tooltip": [
+      {
+        "field": "state_name",
+        "type": "nominal",
+        "title": "State/Territory"
+      },
+      {
+        "field": "risky_percentage",
+        "type": "quantitative",
+        "title": "Risky drinking (%)",
+        "format": ".0f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  }
+}

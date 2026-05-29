@@ -109,6 +109,98 @@
 
   </section>
 
+    <!-- Risky Drinking Section -->
+  <section class="section-heading">
+    <h2>Who is Drinking Too Much?</h2>
+    <p>
+       This section explores how risky alcohol consumption varies across Australians by age, gender, and location.
+    </p>
+  </section>
+
+  <!-- Risky drinking heatmap section -->
+<section class="heatmap-section">
+
+  <div class="heatmap-card">
+    <h2>Risky drinking by age and gender, 2022 to 2023</h2>
+
+    <div id="risky_drinking_heatmap"></div>
+
+    <p class="interaction-note">
+      Tip: Hover over each cell to see the exact risky drinking percentage.
+    </p>
+
+    <p class="source-text">
+      Source:
+      <a href="https://www.aihw.gov.au/reports/illicit-use-of-drugs/national-drug-strategy-household-survey/data" target="_blank">
+        Australian Institute of Health and Welfare, National Drug Strategy Household Survey data
+      </a>
+    </p>
+  </div>
+
+  <div class="annotation-card">
+    <h2>Who is Most at Risk?</h2>
+
+    <p>
+      The heatmap shows that risky alcohol consumption is not evenly spread across age and gender groups. Darker cells represent higher risky drinking rates, making it easier to identify the groups with the greatest risk.
+    </p>
+
+    <p>
+      Overall, males are more likely than females to report risky alcohol consumption across most age groups. This pattern is especially clear among adult groups, where the male cells are generally darker than the female cells.
+    </p>
+
+    <p>
+      Risky drinking is also higher among younger and middle-aged adults compared with the youngest group. The 14–17 age group has much lower risky drinking rates, while several adult age groups show noticeably higher values.
+    </p>
+
+    <p>
+      This suggests that risky drinking is shaped by both age and gender, rather than being evenly distributed across the population.
+    </p>
+  </div>
+
+</section>
+
+<!-- Risky drinking choropleth map section -->
+<section class="heatmap-section">
+
+  <div class="heatmap-card">
+    <h2>Risky drinking by state and territory, 2022-2023</h2>
+
+    <div id="risky_drinking_state_map"></div>
+
+    <p class="interaction-note">
+       Tip: Click a state or territory to isolate it. Double-click the map to reset.
+    </p>
+
+    <p class="source-text">
+      Source:
+      <a href="https://www.aihw.gov.au/reports/illicit-use-of-drugs/national-drug-strategy-household-survey/data" target="_blank">
+        Australian Institute of Health and Welfare, National Drug Strategy Household Survey data
+      </a>
+    </p>
+  </div>
+
+  <div class="annotation-card">
+    <h2>Regional Patterns</h2>
+
+    <p>
+      This choropleth map shows how risky alcohol consumption varies across Australian states and territories in 2022–2023. Each region is coloured according to the percentage of people who reported risky drinking, allowing the geographic differences to be seen quickly.
+    </p>
+
+    <p>
+      The Northern Territory stands out with the highest risky drinking rate at 40%, while Victoria has the lowest value at 26%. Most other states sit close together, with New South Wales at 31%, South Australia at 32%, Queensland and Western Australia at 33%, and Tasmania at 34%.
+    </p>
+
+    <p>
+      This means the map does not show a simple east–west pattern. Instead, it suggests that risky drinking is relatively similar across many states, while a few regions sit noticeably above or below the national pattern.
+    </p>
+
+    <p>
+      Compared with the age and gender heatmap, this map adds a geographic layer to the story. Risky drinking is not only shaped by demographic factors, but also varies depending on where people live in Australia.
+    </p>
+  </div>
+
+</section>
+
   <!-- Vega-Lite libraries -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

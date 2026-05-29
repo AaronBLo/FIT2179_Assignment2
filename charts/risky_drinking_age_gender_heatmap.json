@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 520,
+  "height": 360,
+  "background": "white",
+  "data": {
+    "url": "data/risky_drinking_age_gender_heatmap.csv"
+  },
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "gender",
+      "type": "nominal",
+      "title": "Gender",
+      "axis": {
+        "labelAngle": 0,
+        "labelFont": "Arial",
+        "titleFont": "Arial",
+        "labelFontSize": 13,
+        "titleFontSize": 13
+      }
+    },
+    "y": {
+      "field": "age_group",
+      "type": "ordinal",
+      "title": "Age group",
+      "sort": {
+        "field": "age_order",
+        "order": "ascending"
+      },
+      "axis": {
+        "labelFont": "Arial",
+        "titleFont": "Arial",
+        "labelFontSize": 13,
+        "titleFontSize": 13
+      }
+    },
+    "color": {
+      "field": "risky_percentage",
+      "type": "quantitative",
+      "title": "Risky drinking (%)",
+      "scale": {
+        "domain": [0, 45],
+        "range": ["#E8F4F8", "#0B3C5D"]
+      },
+      "legend": {
+        "orient": "right",
+        "titleFont": "Arial",
+        "labelFont": "Arial",
+        "titleFontSize": 12,
+        "labelFontSize": 12
+      }
+    },
+    "tooltip": [
+      {
+        "field": "age_group",
+        "type": "ordinal",
+        "title": "Age group"
+      },
+      {
+        "field": "gender",
+        "type": "nominal",
+        "title": "Gender"
+      },
+      {
+        "field": "risky_percentage",
+        "type": "quantitative",
+        "title": "Risky drinking (%)",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
