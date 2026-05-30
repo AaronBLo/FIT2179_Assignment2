@@ -1,0 +1,57 @@
+year,state,positive_breath_rate,data_available
+2016,Australian Capital Territory,0.9,Yes
+2016,New South Wales,0.4,Yes
+2016,Northern Territory,4.4,Yes
+2016,Queensland,0.5,Yes
+2016,South Australia,1.0,Yes
+2016,Tasmania,0.5,Yes
+2016,Victoria,0.3,Yes
+2016,Western Australia,0.5,Yes
+2017,Australian Capital Territory,1.2,Yes
+2017,New South Wales,0.4,Yes
+2017,Northern Territory,3.9,Yes
+2017,Queensland,0.6,Yes
+2017,South Australia,1.0,Yes
+2017,Tasmania,0.4,Yes
+2017,Victoria,0.2,Yes
+2017,Western Australia,0.4,Yes
+2018,Australian Capital Territory,1.2,Yes
+2018,New South Wales,0.3,Yes
+2018,Northern Territory,3.5,Yes
+2018,Queensland,0.6,Yes
+2018,South Australia,1.0,Yes
+2018,Tasmania,0.4,Yes
+2018,Victoria,0.2,Yes
+2018,Western Australia,0.4,Yes
+2019,Australian Capital Territory,1.0,Yes
+2019,New South Wales,0.3,Yes
+2019,Northern Territory,5.0,Yes
+2019,Queensland,0.6,Yes
+2019,South Australia,0.9,Yes
+2019,Tasmania,0.5,Yes
+2019,Victoria,0.3,Yes
+2019,Western Australia,0.3,Yes
+2020,Australian Capital Territory,2.3,Yes
+2020,New South Wales,0.5,Yes
+2020,Northern Territory,7.1,Yes
+2020,Queensland,1.2,Yes
+2020,South Australia,1.1,Yes
+2020,Tasmania,,No
+2020,Victoria,0.4,Yes
+2020,Western Australia,0.6,Yes
+2021,Australian Capital Territory,4.8,Yes
+2021,New South Wales,0.5,Yes
+2021,Northern Territory,6.7,Yes
+2021,Queensland,1.0,Yes
+2021,South Australia,0.8,Yes
+2021,Tasmania,,No
+2021,Victoria,0.5,Yes
+2021,Western Australia,0.4,Yes
+2022,Australian Capital Territory,2.4,Yes
+2022,New South Wales,0.4,Yes
+2022,Northern Territory,7.8,Yes
+2022,Queensland,1.0,Yes
+2022,South Australia,0.8,Yes
+2022,Tasmania,,No
+2022,Victoria,0.4,Yes
+2022,Western Australia,0.3,Yes

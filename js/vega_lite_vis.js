@@ -34,3 +34,17 @@ vegaEmbed("#risky_drinking_state_map", risky_drinking_state_map, {
   actions: false
 }).then(function(result) {
 }).catch(console.error);
+
+var national_breath_tests_dual_bar_chart = "charts/national_breath_tests_dual_bar_chart.json";
+
+vegaEmbed("#national_breath_tests_dual_bar_chart", national_breath_tests_dual_bar_chart, {
+  actions: false
+}).then(function(result) {
+}).catch(console.error);
+
+var road_state_map_dot_dashboard = "charts/road_state_map_dot_dashboard.json";
+
+vegaEmbed("#road_state_map_dot_dashboard", road_state_map_dot_dashboard, {
+  actions: false
+}).then(function(result) {
+}).catch(console.error);

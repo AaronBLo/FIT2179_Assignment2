@@ -61,7 +61,7 @@
       <div id="alcohol_status_line_chart"></div>
 
     <p class="interaction-note">
-      Tip: Click any colored line or legend to isolate it. Click away to reset.
+      Tip: Use slider to filter years shown.
     </p>
     </div>
 
@@ -168,13 +168,13 @@
     <div id="risky_drinking_state_map"></div>
 
     <p class="interaction-note">
-       Tip: Click a state or territory to isolate it. Double-click the map to reset.
+       Tip: Click a state or territory to isolate it. Click away from the map to reset.
     </p>
 
     <p class="source-text">
       Source:
-      <a href="https://www.aihw.gov.au/reports/illicit-use-of-drugs/national-drug-strategy-household-survey/data" target="_blank">
-        Australian Institute of Health and Welfare, National Drug Strategy Household Survey data
+      <a href="https://www.aihw.gov.au/reports/alcohol/alcohol-tobacco-other-drugs-australia/contents/geographic-areas/state-and-territory-data" target="_blank">
+        Australian Institute of Health and Welfare, Alcohol, tobacco & other drugs in Australia
       </a>
     </p>
   </div>
@@ -200,6 +200,80 @@
   </div>
 
 </section>
+
+<!-- Road Consequences Section -->
+<section class="section-heading">
+  <h2>What Are the Consequences on Our Roads?</h2>
+  <p>
+    This section explores how alcohol-related road enforcement patterns changed across Australian states and territories from 2016 to 2022, using positive breath test rates and the number of breath tests conducted.
+  </p>
+</section>
+
+<section class="road-dashboard-section">
+
+  <div class="road-chart-card">
+    <h2>National breath testing and positive result rate, 2016 to 2022</h2>
+
+    <div id="national_breath_tests_dual_bar_chart"></div>
+
+    <p class="line-chart-note">
+      The upper bars show the total number of breath tests conducted, while the lower bars show the positive breath test rate. This makes it easier to compare the sharp fall in testing volume with the rise in positive results around 2020.
+    </p>
+
+    <p class="source-text">
+      Source:
+      <a href="https://www.officeofroadsafety.gov.au/data-hub/enforcement-data" target="_blank">
+        National Road Safety Data Hub, Enforcement Data
+      </a>
+    </p>
+  </div>
+
+  <div class="annotation-card">
+    <h2>Testing Fell, but Positive Rates Rose</h2>
+
+    <p>
+      The mirrored bar chart shows two related road enforcement patterns. The upper bars represent the total number of breath tests conducted nationally, while the lower bars represent the percentage of breath tests that returned a positive result.
+    </p>
+
+    <p>
+      From 2016 to 2019, breath testing stayed relatively high, sitting at around 14.6 to 15.8 million tests per year. During the same period, the positive breath test rate remained lower, at around 0.4% to 0.5%.
+    </p>
+
+    <p>
+      In 2020, the number of breath tests dropped sharply to about 7.3 million, while the positive rate increased to 0.7%. This means that even though fewer tests were conducted, a larger share of those tests returned positive results.
+    </p>
+
+    <p>
+      By 2022, testing volume had partly recovered to about 10.6 million tests, but it was still below the 2016 to 2019 level. The positive rate also remained higher than the earlier period, at 0.6%.
+    </p>
+
+    <p>
+      Overall, the chart highlights a key contrast: after 2020, lower testing volume was matched with a higher positive result rate.
+    </p>
+  </div>
+
+ <div class="road-chart-card road-wide-card">
+    <h2>Positive breath test rates by state and territory</h2>
+
+    <div id="road_state_map_dot_dashboard"></div>
+
+    <p class="interaction-note">
+      Tip: Use the year slider to compare how positive breath test rates changed across states and territories.
+    </p>
+
+    <p class="line-chart-note">
+      The map shows the geographic pattern of positive breath test rates, while the dot strip plot compares each jurisdiction more directly. Larger dots represent a higher number of breath tests conducted.
+    </p>
+
+    <p class="source-text">
+      Source:
+      <a href="https://www.officeofroadsafety.gov.au/data-hub/enforcement-data" target="_blank">
+        National Road Safety Data Hub, Enforcement Data
+      </a>
+    </p>
+  </div>
+
+  </section>
 
   <!-- Vega-Lite libraries -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>

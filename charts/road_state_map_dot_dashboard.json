@@ -1,0 +1,200 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "white",
+  "params": [
+    {
+      "name": "selected_year_road",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 2016,
+        "max": 2022,
+        "step": 1,
+        "name": "Select year: "
+      }
+    }
+  ],
+  "hconcat": [
+    {
+      "width": 560,
+      "height": 360,
+      "projection": {
+        "type": "mercator",
+        "center": [134, -28],
+        "scale": 520,
+        "translate": [280, 180]
+      },
+      "data": {
+        "url": "data/positive_breath_rate_by_state_2016_2022.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.year == selected_year_road"
+        },
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "url": "data/australia_states.json",
+              "format": {
+                "type": "topojson",
+                "feature": "australia_states"
+              }
+            },
+            "key": "properties.STE_NAME16"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "positive_breath_rate",
+          "type": "quantitative",
+          "title": "Positive rate (%)",
+          "scale": {
+            "domain": [0, 8],
+            "range": ["#E8F4F8", "#0B3C5D"]
+          },
+          "legend": {
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State/Territory"
+          },
+          {
+            "field": "positive_breath_rate",
+            "type": "quantitative",
+            "title": "Positive breath test rate (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "data_available",
+            "type": "nominal",
+            "title": "Data available"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "height": 330,
+      "data": {
+        "url": "data/positive_breath_tests_dot_strip_2016_2022.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.year == selected_year_road"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "opacity": 0.85,
+        "stroke": "white",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {
+          "field": "positive_breath_rate",
+          "type": "quantitative",
+          "title": "Positive breath test rate (%)",
+          "scale": {
+            "domain": [0, 8]
+          },
+          "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "grid": true,
+            "gridColor": "#e5e5e5"
+          }
+        },
+        "y": {
+          "field": "state_abbr",
+          "type": "nominal",
+          "title": null,
+          "sort": "-x",
+          "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 13
+          }
+        },
+        "size": {
+          "field": "breath_tests",
+          "type": "quantitative",
+          "title": "Breath tests",
+          "scale": {
+            "range": [90, 1000]
+          },
+          "legend": {
+            "orient": "right",
+            "direction": "vertical",
+            "titleFontSize": 12,
+            "labelFontSize": 11,
+            "format": ".2s"
+          }
+        },
+        "color": {
+          "field": "state_abbr",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": ["ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
+            "range": ["#12355B", "#00798C", "#B23A48", "#588157", "#EDAE49", "#6A4C93", "#D1495B", "#6C757D"]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State/Territory"
+          },
+          {
+            "field": "positive_breath_rate",
+            "type": "quantitative",
+            "title": "Positive rate (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "breath_tests",
+            "type": "quantitative",
+            "title": "Breath tests conducted",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+  "spacing": 35,
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  }
+}

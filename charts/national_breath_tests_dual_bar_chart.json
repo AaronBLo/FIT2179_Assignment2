@@ -1,0 +1,132 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "white",
+  "vconcat": [
+    {
+      "width": 620,
+      "height": 190,
+      "data": {
+        "url": "data/breath_tests_national_2016_2022.csv"
+      },
+      "mark": {
+        "type": "bar",
+        "cornerRadiusTopLeft": 4,
+        "cornerRadiusTopRight": 4,
+        "color": "#12355B"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": null,
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "y": {
+          "field": "breath_tests",
+          "type": "quantitative",
+          "title": "Breath tests conducted",
+          "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "grid": true,
+            "gridColor": "#e5e5e5",
+            "labelExpr": "format(datum.value / 1000000, '.0f') + 'M'"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "breath_tests",
+            "type": "quantitative",
+            "title": "Breath tests conducted",
+            "format": ","
+          },
+          {
+            "field": "positive_rate",
+            "type": "quantitative",
+            "title": "Positive rate (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "width": 620,
+      "height": 150,
+      "data": {
+        "url": "data/breath_tests_national_2016_2022.csv"
+      },
+      "mark": {
+        "type": "bar",
+        "cornerRadiusBottomLeft": 4,
+        "cornerRadiusBottomRight": 4,
+        "color": "#00798C"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+            "labelAngle": 0,
+            "labelFontSize": 12,
+            "titleFontSize": 13
+          }
+        },
+        "y": {
+          "field": "positive_rate",
+          "type": "quantitative",
+          "title": "Positive rate (%)",
+          "scale": {
+            "reverse": true,
+            "domain": [0, 1]
+          },
+          "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "grid": true,
+            "gridColor": "#e5e5e5",
+            "format": ".1f"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "positive_rate",
+            "type": "quantitative",
+            "title": "Positive rate (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "breath_tests",
+            "type": "quantitative",
+            "title": "Breath tests conducted",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+  "spacing": 0,
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  }
+}

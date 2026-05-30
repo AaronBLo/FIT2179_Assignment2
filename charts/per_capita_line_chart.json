@@ -8,7 +8,10 @@
   },
   "mark": {
     "type": "line",
-    "point": true,
+    "point": {
+      "filled": true,
+      "size": 95
+    },
     "strokeWidth": 3,
     "color": "#12355B"
   },

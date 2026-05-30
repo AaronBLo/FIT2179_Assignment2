@@ -99,10 +99,29 @@ body {
   align-items: stretch;
 }
 
+.heatmap-section {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 35px;
+  padding: 25px 8% 50px 8%;
+  align-items: stretch;
+}
+
+.road-dashboard-section {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 35px;
+  padding: 25px 8% 50px 8%;
+  align-items: stretch;
+}
+
 .chart-explanation,
 .chart-panel,
 .beverage-breakdown-card,
-.per-capita-card {
+.per-capita-card,
+.heatmap-card,
+.annotation-card,
+.road-chart-card {
   background-color: white;
   padding: 35px;
   border-radius: 16px;
@@ -141,52 +160,18 @@ body {
 .chart-explanation .source-text a:hover {
   color: #12355B;
 }
+
 .chart-panel h2,
 .beverage-breakdown-card h2,
-.per-capita-card h2 {
+.per-capita-card h2,
+.heatmap-card h2,
+.annotation-card h2,
+.road-chart-card h2 {
   color: #12355B;
   font-size: 24px;
   line-height: 1.25;
   margin-top: 0;
   margin-bottom: 25px;
-}
-
-#alcohol_status_line_chart,
-#beverage_2022_stacked_bar,
-#per_capita_line_chart {
-  display: flex;
-  justify-content: center;
-}
-
-.chart-note {
-  font-size: 16px;
-  color: #555555;
-  margin-top: 25px;
-  margin-bottom: 0;
-}
-
-.stacked-bar-note {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #555555;
-  margin-top: 18px;
-  margin-bottom: 0;
-}
-
-.beverage-breakdown-card {
-  min-height: 330px;
-}
-
-.line-chart-note {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #555555;
-  margin-top: 18px;
-  margin-bottom: 0;
-}
-
-.per-capita-card {
-  min-height: 390px;
 }
 
 .section-heading {
@@ -210,44 +195,112 @@ body {
   margin: 0;
 }
 
-.heatmap-section {
-  display: grid;
-  grid-template-columns: 1.45fr 1fr;
-  gap: 35px;
-  padding: 25px 8% 50px 8%;
-  align-items: stretch;
+#alcohol_status_line_chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.heatmap-card,
-.annotation-card {
-  background-color: white;
-  padding: 35px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  box-sizing: border-box;
+#alcohol_status_line_chart .vega-bindings {
+  order: 2;
+  margin-top: 18px;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  color: #555555;
 }
 
-.heatmap-card h2,
-.annotation-card h2 {
-  color: #12355B;
-  font-size: 24px;
-  line-height: 1.25;
-  margin-top: 0;
-  margin-bottom: 25px;
+#alcohol_status_line_chart .vega-bind {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#alcohol_status_line_chart input[type="range"] {
+  width: 220px;
+}
+
+#beverage_2022_stacked_bar,
+#per_capita_line_chart,
+#risky_drinking_heatmap,
+#risky_drinking_state_map,
+#breath_tests_national_area_chart,
+#positive_breath_rate_line_chart,
+#national_breath_tests_dual_bar_chart,
+#positive_breath_rate_state_map,
+#positive_breath_tests_dot_strip {
+  display: flex;
+  justify-content: center;
+}
+
+#road_state_map_dot_dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#road_state_map_dot_dashboard .vega-embed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#road_state_map_dot_dashboard .vega-bindings {
+  order: 2;
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  color: #555555;
+}
+
+#road_state_map_dot_dashboard .vega-bind {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#road_state_map_dot_dashboard input[type="range"] {
+  width: 220px;
+}
+
+.chart-note {
+  font-size: 16px;
+  color: #555555;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+.stacked-bar-note,
+.line-chart-note {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555555;
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.beverage-breakdown-card {
+  min-height: 330px;
+}
+
+.per-capita-card {
+  min-height: 390px;
+}
+
+.road-chart-card {
+  min-height: 430px;
+}
+
+.road-wide-card {
+  grid-column: 1 / -1;
 }
 
 .annotation-card p {
   font-size: 19px;
   line-height: 1.65;
   margin-bottom: 24px;
-}
-
-#risky_drinking_heatmap {
-  display: flex;
-  justify-content: center;
-}
-
-#risky_drinking_state_map {
-  display: flex;
-  justify-content: center;
 }

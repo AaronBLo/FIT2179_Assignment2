@@ -1,0 +1,54 @@
+year,state,state_abbr,breath_tests,positive_breath_rate
+2016,Australian Capital Territory,ACT,116490,0.9
+2016,New South Wales,NSW,4908582,0.4
+2016,Northern Territory,NT,171618,4.4
+2016,Queensland,QLD,3411115,0.5
+2016,South Australia,SA,529440,1.0
+2016,Tasmania,TAS,512906,0.5
+2016,Victoria,VIC,3054233,0.3
+2016,Western Australia,WA,1926480,0.5
+2017,Australian Capital Territory,ACT,88929,1.2
+2017,New South Wales,NSW,4898088,0.4
+2017,Northern Territory,NT,199016,3.9
+2017,Queensland,QLD,2766038,0.6
+2017,South Australia,SA,591574,1.0
+2017,Tasmania,TAS,462344,0.4
+2017,Victoria,VIC,4230974,0.2
+2017,Western Australia,WA,2549578,0.4
+2018,Australian Capital Territory,ACT,89989,1.2
+2018,New South Wales,NSW,5538320,0.3
+2018,Northern Territory,NT,143408,5.3
+2018,Queensland,QLD,2652739,0.6
+2018,South Australia,SA,519770,1.0
+2018,Tasmania,TAS,450715,0.4
+2018,Victoria,VIC,3546342,0.2
+2018,Western Australia,WA,2094996,0.4
+2019,Australian Capital Territory,ACT,90248,1.0
+2019,New South Wales,NSW,6014549,0.3
+2019,Northern Territory,NT,155950,5.0
+2019,Queensland,QLD,2663066,0.6
+2019,South Australia,SA,563324,0.9
+2019,Tasmania,TAS,386687,0.5
+2019,Victoria,VIC,3238498,0.3
+2019,Western Australia,WA,2135725,0.3
+2020,Australian Capital Territory,ACT,39355,2.3
+2020,New South Wales,NSW,2839850,0.5
+2020,Northern Territory,NT,103102,7.1
+2020,Queensland,QLD,1351230,1.2
+2020,South Australia,SA,402700,1.1
+2020,Victoria,VIC,1153190,0.4
+2020,Western Australia,WA,1292819,0.6
+2021,Australian Capital Territory,ACT,16141,4.8
+2021,New South Wales,NSW,2794704,0.5
+2021,Northern Territory,NT,81987,6.7
+2021,Queensland,QLD,1569648,1.0
+2021,South Australia,SA,480023,0.8
+2021,Victoria,VIC,1343080,0.5
+2021,Western Australia,WA,1975362,0.4
+2022,Australian Capital Territory,ACT,35591,2.4
+2022,New South Wales,NSW,3825522,0.4
+2022,Northern Territory,NT,65819,7.8
+2022,Queensland,QLD,1657920,1.0
+2022,South Australia,SA,554774,0.8
+2022,Victoria,VIC,2203908,0.4
+2022,Western Australia,WA,2179499,0.3

@@ -2,39 +2,43 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 620,
   "height": 330,
+  "background": "white",
   "data": {
     "url": "data/alcohol_drinking_status.csv"
   },
   "params": [
     {
-      "name": "status_select",
-      "select": {
-        "type": "point",
-        "fields": ["status"],
-        "on": "click",
-        "clear": "dblclick"
-      },
-       "bind": "legend"
+      "name": "selected_year",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 2001,
+        "max": 2022,
+        "step": 3,
+        "name": "Select year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.year == selected_year"
     }
   ],
   "mark": {
-    "type": "line",
-    "point": {
-      "filled": true,
-      "size": 70
-    },
-    "strokeWidth": 2.5
+    "type": "bar",
+    "cornerRadiusTopLeft": 4,
+    "cornerRadiusTopRight": 4
   },
   "encoding": {
     "x": {
-      "field": "year",
-      "type": "ordinal",
-      "title": null,
+      "field": "status",
+      "type": "nominal",
+      "title": "Drinking status",
+      "sort": "-y",
       "axis": {
-        "labelAngle": 0,
+        "labelAngle": -25,
         "labelFontSize": 12,
-        "tickSize": 0,
-        "domainColor": "#555555"
+        "titleFontSize": 14
       }
     },
     "y": {
@@ -48,8 +52,7 @@
         "labelFontSize": 12,
         "titleFontSize": 14,
         "grid": true,
-        "gridColor": "#e5e5e5",
-        "domainColor": "#555555"
+        "gridColor": "#e5e5e5"
       }
     },
     "color": {
@@ -74,27 +77,14 @@
           "#588157"
         ]
       },
-      "legend": {
-        "orient": "bottom",
-        "columns": 3,
-        "labelFontSize": 12,
-        "titleFontSize": 14,
-        "symbolType": "square",
-        "symbolSize": 160
-      }
-    },
-    "opacity": {
-      "condition": {
-        "param": "status_select",
-        "value": 1
-      },
-      "value": 0.18
+      "legend": null
     },
     "tooltip": [
       {
         "field": "year",
-        "type": "ordinal",
-        "title": "Year"
+        "type": "quantitative",
+        "title": "Year",
+        "format": "d"
       },
       {
         "field": "status",
@@ -110,15 +100,10 @@
     ]
   },
   "config": {
-    "background": "#ffffff",
     "view": {
       "stroke": "transparent"
     },
     "axis": {
-      "labelFont": "Arial",
-      "titleFont": "Arial"
-    },
-    "legend": {
       "labelFont": "Arial",
       "titleFont": "Arial"
     }
