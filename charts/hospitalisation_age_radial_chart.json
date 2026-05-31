@@ -1,0 +1,144 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 430,
+  "height": 430,
+  "background": "white",
+  "data": {
+    "url": "data/alcohol_hospitalisation_rate_by_age_2015_2022.csv"
+  },
+  "params": [
+    {
+      "name": "selected_year_age_hospital",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 2015,
+        "max": 2022,
+        "step": 1,
+        "name": "Select year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+        "filter": "datum.year == selected_year_age_hospital"
+    },
+    {
+        "calculate": "format(datum.hospitalisation_rate_per_100000, '.1f')",
+        "as": "rate_label"
+    },
+    {
+        "calculate": "datum.hospitalisation_rate_per_100000 < 320 ? '#12355B' : 'white'",
+        "as": "label_colour"
+    }
+    ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 35,
+        "stroke": "white",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "theta": {
+          "field": "age_group",
+          "type": "nominal",
+          "sort": ["15-24", "25-34", "35-44", "45-54", "55+"]
+        },
+        "radius": {
+          "field": "hospitalisation_rate_per_100000",
+          "type": "quantitative",
+          "scale": {
+            "type": "sqrt",
+            "zero": true,
+            "rangeMin": 45,
+            "rangeMax": 195
+          }
+        },
+        "color": {
+          "field": "age_group",
+          "type": "nominal",
+          "title": "Age group",
+          "scale": {
+            "domain": ["15-24", "25-34", "35-44", "45-54", "55+"],
+            "range": ["#DCEAF7", "#A9CCE8", "#74A9CF", "#2B6C9B", "#12355B"]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 14,
+            "labelFontSize": 12,
+            "symbolType": "circle"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "age_group",
+            "type": "nominal",
+            "title": "Age group"
+          },
+          {
+            "field": "hospitalisation_rate_per_100000",
+            "type": "quantitative",
+            "title": "Hospitalisations per 100,000",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "radiusOffset": -28,
+        "font": "Arial",
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "theta": {
+          "field": "age_group",
+          "type": "nominal",
+          "sort": ["15-24", "25-34", "35-44", "45-54", "55+"]
+        },
+        "radius": {
+          "field": "hospitalisation_rate_per_100000",
+          "type": "quantitative",
+          "scale": {
+            "type": "sqrt",
+            "zero": true,
+            "rangeMin": 45,
+            "rangeMax": 195
+          }
+        },
+        "text": {
+          "field": "rate_label"
+        },
+        "color": {
+          "field": "label_colour",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  }
+}

@@ -246,10 +246,6 @@
     <p>
       By 2022, testing volume had partly recovered to about 10.6 million tests, but it was still below the 2016 to 2019 level. The positive rate also remained higher than the earlier period, at 0.6%.
     </p>
-
-    <p>
-      Overall, the chart highlights a key contrast: after 2020, lower testing volume was matched with a higher positive result rate.
-    </p>
   </div>
 
  <div class="road-chart-card road-wide-card">
@@ -265,6 +261,10 @@
       The map shows the geographic pattern of positive breath test rates, while the dot strip plot compares each jurisdiction more directly. Larger dots represent a higher number of breath tests conducted.
     </p>
 
+    <p class="line-chart-note">
+      Note: From 2020 onwards, Tasmania does not provide positive breath test rate data, so Tasmania is excluded from the map and dot strip plot for 2020, 2021, and 2022.
+    </p>
+
     <p class="source-text">
       Source:
       <a href="https://www.officeofroadsafety.gov.au/data-hub/enforcement-data" target="_blank">
@@ -274,6 +274,91 @@
   </div>
 
   </section>
+
+  <!-- Health Consequences Section -->
+<section class="section-heading">
+  <h2>What Are the Health Consequences?</h2>
+  <p>
+    This section explores how alcohol-related harm appears in Australia’s health system, focusing on hospitalisation rates over time and how the burden differs across the population.
+  </p>
+</section>
+
+<section class="road-dashboard-section">
+
+  <div class="road-chart-card">
+    <h2>Alcohol-related hospitalisation rate, 2015 to 2022</h2>
+
+    <div id="alcohol_hospitalisation_area_chart"></div>
+
+    <p class="line-chart-note">
+      This area chart shows the alcohol-related hospitalisation rate per 100,000 population from 2015 to 2022. The rate rose gradually before reaching a clear peak in 2020, then declined in 2021 and 2022 while remaining above the 2015 level.
+    </p>
+
+    <p class="source-text">
+      Source:
+      <a href="https://www.aihw.gov.au/reports/alcohol/alcohol-drugs-hospitalisations" target="_blank">
+        Alcohol-related hospitalisation data
+      </a>
+    </p>
+  </div>
+
+  <div class="annotation-card">
+    <h2>Hospitalisation Rates Peaked in 2020</h2>
+
+    <p>
+      Alcohol-related hospitalisation rates increased from 285.0 per 100,000 population in 2015 to 301.8 in 2018, before falling slightly in 2019.
+    </p>
+
+    <p>
+      The largest increase occurred in 2020, when the rate rose to 337.8 per 100,000 population. This makes 2020 the highest point in the series.
+    </p>
+
+    <p>
+      After 2020, the rate decreased to 311.9 in 2021 and 305.6 in 2022. However, the 2022 value was still higher than every year from 2015 to 2019.
+    </p>
+
+    <p>
+      This suggests that alcohol-related health consequences remained elevated even after the sharp 2020 peak.
+    </p>
+  </div>
+
+</section>
+
+<section class="road-dashboard-section">
+
+  <div class="road-chart-card">
+    <h2>Alcohol-related hospitalisation rates by sex, 2015 to 2022</h2>
+
+    <div id="alcohol_hospitalisation_sex_mirrored_area_chart"></div>
+
+    <p class="line-chart-note">
+      This mirrored area chart compares alcohol-related hospitalisation rates for males and females per 100,000 population. Male rates are shown above the centre line, while female rates are mirrored below it.
+    </p>
+
+    <p class="source-text">
+      Source:
+      <a href="https://www.aihw.gov.au/reports/alcohol/alcohol-drugs-hospitalisations" target="_blank">
+        Alcohol-related hospitalisation data
+      </a>
+    </p>
+  </div>
+
+  <div class="per-capita-card">
+    <h2>Alcohol-related hospitalisation rate by age group, 2015 to 2022</h2>
+    <div id="hospitalisation_age_radial_chart"></div>
+
+    <p class="interaction-note">
+      Tip: Use the year slider to compare how hospitalisation rates changed across age groups.
+    </p>
+
+    <p class="line-chart-note">
+      This radial bar chart compares alcohol-related hospitalisation rates across age groups per 100,000 population.
+    </p>
+
+    <p class="source-text">
+      Source: <a href="https://www.aihw.gov.au/reports/alcohol/alcohol-drugs-hospitalisations">Alcohol-related hospitalisation data</a>
+    </p>
+  </div>
 
   <!-- Vega-Lite libraries -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>

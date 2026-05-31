@@ -48,3 +48,19 @@ vegaEmbed("#road_state_map_dot_dashboard", road_state_map_dot_dashboard, {
   actions: false
 }).then(function(result) {
 }).catch(console.error);
+
+var alcohol_hospitalisation_area_chart = "charts/alcohol_hospitalisation_area_chart.json";
+
+vegaEmbed("#alcohol_hospitalisation_area_chart", alcohol_hospitalisation_area_chart, {
+  actions: false
+}).then(function(result) {
+}).catch(console.error);
+
+var alcohol_hospitalisation_sex_mirrored_area_chart = "charts/alcohol_hospitalisation_sex_mirrored_area_chart.json";
+
+vegaEmbed("#alcohol_hospitalisation_sex_mirrored_area_chart", alcohol_hospitalisation_sex_mirrored_area_chart, {
+  actions: false
+}).then(function(result) {
+}).catch(console.error);
+
+vegaEmbed("#hospitalisation_age_radial_chart", "charts/hospitalisation_age_radial_chart.json", { actions: false });

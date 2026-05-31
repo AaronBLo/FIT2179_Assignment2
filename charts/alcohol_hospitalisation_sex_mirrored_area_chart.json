@@ -1,0 +1,131 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 620,
+  "height": 330,
+  "background": "white",
+  "data": {
+    "url": "data/alcohol_hospitalisation_rate_by_sex_2015_2022.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "male_rate_per_100000",
+        "female_rate_per_100000"
+      ],
+      "as": ["sex_type", "rate"]
+    },
+    {
+      "calculate": "datum.sex_type == 'male_rate_per_100000' ? 'Male' : 'Female'",
+      "as": "sex"
+    },
+    {
+      "calculate": "datum.sex == 'Female' ? -datum.rate : datum.rate",
+      "as": "mirrored_rate"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "line": {
+          "strokeWidth": 3
+        },
+        "point": {
+          "filled": true,
+          "size": 80
+        },
+        "opacity": 0.45
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+            "labelAngle": 0,
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "orient": "bottom"
+          }
+        },
+        "y": {
+          "field": "mirrored_rate",
+          "type": "quantitative",
+          "title": "Hospitalisations per 100,000 population",
+          "scale": {
+            "domain": [-300, 450]
+          },
+          "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "grid": true,
+            "gridColor": "#e5e5e5",
+            "labelExpr": "abs(datum.value)"
+          }
+        },
+        "color": {
+          "field": "sex",
+          "type": "nominal",
+          "title": "Sex",
+          "scale": {
+            "domain": ["Male", "Female"],
+            "range": ["#588157", "#6A4C93"]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolType": "square",
+            "symbolSize": 140,
+            "titleFont": "Arial",
+            "labelFont": "Arial",
+            "titleFontSize": 12,
+            "labelFontSize": 12
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "sex",
+            "type": "nominal",
+            "title": "Sex"
+          },
+          {
+            "field": "rate",
+            "type": "quantitative",
+            "title": "Rate per 100,000",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#333333",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "y": {
+          "datum": 0
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  }
+}

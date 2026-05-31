@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 620,
+  "height": 300,
+  "background": "white",
+  "data": {
+    "url": "data/alcohol_hospitalisation_rate_2015_2022.csv"
+  },
+  "mark": {
+    "type": "area",
+    "line": {
+      "color": "#B86B00",
+      "strokeWidth": 3
+    },
+    "point": {
+      "filled": true,
+      "size": 90,
+      "color": "#B86B00"
+    },
+    "color": "#F4A261",
+    "opacity": 0.5
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 12,
+        "titleFontSize": 13
+      }
+    },
+    "y": {
+      "field": "hospitalisation_rate_per_100000",
+      "type": "quantitative",
+      "title": "Hospitalisations per 100,000 population",
+      "scale": {
+        "zero": false
+      },
+      "axis": {
+        "labelFontSize": 12,
+        "titleFontSize": 13,
+        "grid": true,
+        "gridColor": "#e5e5e5"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "year",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      {
+        "field": "hospitalisation_rate_per_100000",
+        "type": "quantitative",
+        "title": "Rate per 100,000",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  }
+}
