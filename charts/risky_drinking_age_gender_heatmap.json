@@ -6,11 +6,12 @@
   "data": {
     "url": "data/risky_drinking_age_gender_heatmap.csv"
   },
-  "mark": {
-    "type": "rect",
-    "stroke": "white",
-    "strokeWidth": 2
-  },
+  "transform": [
+    {
+      "calculate": "format(datum.risky_percentage, '.1f') + '%'",
+      "as": "percentage_label"
+    }
+  ],
   "encoding": {
     "x": {
       "field": "gender",
@@ -38,42 +39,73 @@
         "labelFontSize": 13,
         "titleFontSize": 13
       }
-    },
-    "color": {
-      "field": "risky_percentage",
-      "type": "quantitative",
-      "title": "Risky drinking (%)",
-      "scale": {
-        "domain": [0, 45],
-        "range": ["#E8F4F8", "#0B3C5D"]
-      },
-      "legend": {
-        "orient": "right",
-        "titleFont": "Arial",
-        "labelFont": "Arial",
-        "titleFontSize": 12,
-        "labelFontSize": 12
-      }
-    },
-    "tooltip": [
-      {
-        "field": "age_group",
-        "type": "ordinal",
-        "title": "Age group"
-      },
-      {
-        "field": "gender",
-        "type": "nominal",
-        "title": "Gender"
-      },
-      {
-        "field": "risky_percentage",
-        "type": "quantitative",
-        "title": "Risky drinking (%)",
-        "format": ".1f"
-      }
-    ]
+    }
   },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "color": {
+          "field": "risky_percentage",
+          "type": "quantitative",
+          "title": "Risky drinking (%)",
+          "scale": {
+            "domain": [0, 45],
+            "range": ["#E8F4F8", "#0B3C5D"]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFont": "Arial",
+            "labelFont": "Arial",
+            "titleFontSize": 12,
+            "labelFontSize": 12
+          }
+        },
+        "tooltip": [
+          {
+            "field": "age_group",
+            "type": "ordinal",
+            "title": "Age group"
+          },
+          {
+            "field": "gender",
+            "type": "nominal",
+            "title": "Gender"
+          },
+          {
+            "field": "risky_percentage",
+            "type": "quantitative",
+            "title": "Risky drinking (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "font": "Arial",
+        "fontSize": 13,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "percentage_label"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.risky_percentage >= 28",
+            "value": "white"
+          },
+          "value": "#12355B"
+        }
+      }
+    }
+  ],
   "config": {
     "view": {
       "stroke": null
